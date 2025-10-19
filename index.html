@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <div class="navbar">
         <h1>Script-Shelf</h1>
@@ -19,6 +21,7 @@
             <h2>Ego Is the Enemy</h2>
             <h5>Ryan Holiday</h5>
             <p>This book argues that too often our greatest obstacle is not outside circumstance but our own ego, and it shows how humanity, self-awareness and a grounded purpose can help overcome it.</p>
+            <a href="https://thereadershub.org/wp-content/uploads/2020/07/Ryan_Holiday_Ego_is_the_Enenmyz-lib.org_.pdf">Click to Read</a>
             <button onclick="deletebook(event)">Delete</button>
         </div>
     </div>
@@ -26,19 +29,21 @@
     <div class="popup-overlay"></div>
 
     <div class="popup-box">
-       <h2>Add Book</h2>
-       <form>
-        <input id="book-image-input" placeholder="Book Image Url">
-        <input id="book-title-input" placeholder="Book Title">
-        <input id="book-author-input" placeholder="Book Auther">
-        <textarea id="book-description-input" placeholder="Short Discription"></textarea>
-        <button id="add-book">ADD</button>
-        <button id="cancel-popup">CANCEL</button>
-       </form>
+        <h2>Add Book</h2>
+        <form>
+            <input id="book-image-input" placeholder="Book Image Url">
+            <input id="book-title-input" placeholder="Book Title">
+            <input id="book-author-input" placeholder="Book Author">
+            <input id="book-url-input" placeholder="Book Url to Read">
+            <textarea id="book-description-input" placeholder="Short Discription"></textarea>
+            <button id="add-book">ADD</button>
+            <button id="cancel-popup">CANCEL</button>
+        </form>
     </div>
 
     <button class="add-button" id="add-popupbutton">+</button>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

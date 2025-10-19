@@ -1,27 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background: url(background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 
-   
+
 }
-.navbar{
+
+.navbar {
     background-color: #f52761;
     padding: 10px;
 }
 
-.container{
+.container {
     padding: 10px;
 }
 
-.book-container{
+.book-container {
     padding: 15px;
     width: 25%;
     border: #f52761 solid;
@@ -33,17 +34,17 @@ body{
     vertical-align: top;
 }
 
-.book-container img{
+.book-container img {
     padding-left: 25%;
     width: 180px;
     height: 200px;
 }
 
-.book-container h2{
+.book-container h2 {
     color: #f52761;
 }
 
-.book-container button{
+.book-container button {
     background-color: #f52761;
     border-radius: 8px;
     padding: 5px;
@@ -53,7 +54,23 @@ body{
     border: none;
 }
 
-.add-button{
+.book-container button:hover {
+    color: #f52761;
+    background-color: black;
+    border: #f52761 solid;
+}
+
+.book-container a{
+    text-decoration: none;
+    color:#f52761;
+    display: block;
+}
+.book-container a:hover{
+    transform: scale(1.02);
+    color: goldenrod;
+}
+
+.add-button {
     background-color: #f52761;
     color: black;
     border-radius: 100%;
@@ -66,7 +83,11 @@ body{
     right: 30px;
 }
 
-.popup-overlay{
+.add-button:hover{
+    transform: scale(1.1);
+}
+
+.popup-overlay {
     background-color: black;
     position: absolute;
     width: 100%;
@@ -79,7 +100,7 @@ body{
 
 }
 
-.popup-box{
+.popup-box {
     background-color: #f52761;
     width: 40%;
     padding: 40px;
@@ -91,7 +112,7 @@ body{
     display: none;
 }
 
-.popup-box input{
+.popup-box input {
     background: transparent;
     border: none;
     width: 100%;
@@ -101,7 +122,7 @@ body{
     border-bottom: solid black;
 }
 
-.popup-box textarea{
+.popup-box textarea {
     background: transparent;
     width: 100%;
     margin: 5px;
@@ -111,15 +132,15 @@ body{
 
 }
 
-.popup-box input::placeholder{
+.popup-box input::placeholder {
     color: black;
 }
 
-.popup-box textarea::placeholder{
+.popup-box textarea::placeholder {
     color: black;
 }
 
-.popup-box button{
+.popup-box button {
     background-color: black;
     padding: 10px;
     padding-left: 15px;
@@ -128,33 +149,45 @@ body{
     margin: 10px;
     border-radius: 5px;
 }
+.popup-box button:hover{
+    transform: scale(1.05);
+}
 
-.popup-box input:focus{
+.popup-box input:focus {
     outline: none;
 }
 
-.popup-box textarea:focus{
+.popup-box textarea:focus {
     outline: none;
 }
 
-@media screen  and (max-width:600px) {
+@media screen and (max-width:1200px) {
 
-    body{
+    .book-container {
+        width: 35%;
+    }
+
+    .book-container img {
+        padding-left: 32%;
+        width: 140px;
+        height: 160px;
+    }
+}
+
+@media screen and (max-width:670px) {
+
+    body {
         background-color: lightcoral;
     }
 
-    .book-container{
+    .book-container {
         display: block;
+        width: 80%;
     }
 
-    .book-container img{
-        padding-left: 35%;
+    .book-container img {
+        padding-left: 32%;
         width: 100px;
         height: 120px;
     }
-
-    .book-container{
-    width: 80%;
-    display: block;
-}
 }
