@@ -33,6 +33,12 @@ body{
     vertical-align: top;
 }
 
+.book-container img{
+    padding-left: 25%;
+    width: 180px;
+    height: 200px;
+}
+
 .book-container h2{
     color: #f52761;
 }
@@ -129,4 +135,26 @@ body{
 
 .popup-box textarea:focus{
     outline: none;
+}
+
+@media screen  and (max-width:600px) {
+
+    body{
+        background-color: lightcoral;
+    }
+
+    .book-container{
+        display: block;
+    }
+
+    .book-container img{
+        padding-left: 35%;
+        width: 100px;
+        height: 120px;
+    }
+
+    .book-container{
+    width: 80%;
+    display: block;
+}
 }

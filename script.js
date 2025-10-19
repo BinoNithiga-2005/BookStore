@@ -17,10 +17,11 @@
     popupOverlay.style.display ="none"
  })
 
-//select container, add-book, book-title-input, book-author-input, book-description-input
+//select container, add-book,book-image-input, book-title-input, book-author-input, book-description-input
 
 let Container = document.querySelector(".container");
 let addBook = document.getElementById("add-book");
+let addImage = document.getElementById("book-image-input");
 let bookTitle = document.getElementById("book-title-input");
 let bookAuthor = document.getElementById("book-author-input");
 let bookDescription = document.getElementById("book-description-input");
@@ -31,11 +32,20 @@ addBook.addEventListener("click", function(event){
     popupOverlay.style.display = "none"
     let div = document.createElement("div");
     div.setAttribute("class","book-container");
-    div.innerHTML = `<h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5> <p>${bookDescription.value}</p> <button onclick="deletebook(event)">Delete</button>`
-    Container.append(div)
+    div.innerHTML = `<img src="${addImage.value}" alt="BookCover"><h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5> <p>${bookDescription.value}</p> <button onclick="deletebook(event)">Delete</button>`
+    Container.append(div);
+
+    // clear input fileds
+document.getElementById("book-image-input").value = '';
+document.getElementById("book-title-input"). value = '';
+document.getElementById("book-author-input").value='';
+document.getElementById("book-description-input").value='';
+    
 })
 
 function deletebook(event){
-    event.target.parentElement.remove()
+    if(confirm("Are you sure you want to delete this book?")){
+        event.target.parentElement.remove()
+    }
 }
     
