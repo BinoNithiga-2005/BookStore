@@ -17,15 +17,17 @@ cancelButton.addEventListener("click", function (event) {
     popupOverlay.style.display = "none"
 })
 
-//select container, add-book,book-image-input, book-title-input, book-author-input, book-description-input, book-url-input
+//select container, add-book,book-image-input, book-title-input, book-author-input, book-description-input, book-url-input, book-page-read
 
 let Container = document.querySelector(".container");
 let addBook = document.getElementById("add-book");
 let bookImage = document.getElementById("book-image-input");
 let bookTitle = document.getElementById("book-title-input");
 let bookAuthor = document.getElementById("book-author-input");
-let bookUrl = document.getElementById("book-url-input")
+let bookUrl = document.getElementById("book-url-input");
+let bookPages = document.getElementById("book-page-read")
 let bookDescription = document.getElementById("book-description-input");
+
 
 addBook.addEventListener("click", function (event) {
     event.preventDefault()
@@ -33,21 +35,45 @@ addBook.addEventListener("click", function (event) {
     popupOverlay.style.display = "none"
     let div = document.createElement("div");
     div.setAttribute("class", "book-container");
-    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5>  <a href="${bookUrl.value}">Click to Read</a> <p>${bookDescription.value}</p> <button onclick="deletebook(event)">Delete</button>`
-    Container.append(div);
+    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5>  <a href="${bookUrl.value}">Click to Read</a> <p>${bookDescription.value}</p> <h4 class="pages">Pages Read:<span>${bookPages.value || 0}</span></h4> <input type="number" class = "update-pages" placeholder = "Updated Pages Here"> <button onclick = "updatePages(event)">Update</button> <button onclick="deletebook(event) ">Delete</button>`
+    Container.appendChild(div);
 
     // clear input fileds
-    document.getElementById("book-image-input").value = '';
-    document.getElementById("book-title-input").value = '';
-    document.getElementById("book-author-input").value = '';
-    document.getElementById("book-description-input").value = '';
-    document.getElementById("book-url-input").value = '';
+    bookImage.value = '';
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookDescription.value = '';
+    bookUrl.value = '';
+    bookPages.value = '';
 
 })
 
+Container.addEventListener("click", function (event) {
+    if (event.target.tagName === "A") {
+        if (!event.target.href || event.target.href === window.location.href) {
+            event.preventDefault();
+            alert("No URL provided for this book!");
+        }
+    }
+});
+
 function deletebook(event) {
     if (confirm("Are you sure you want to delete this book?")) {
-        event.target.parentElement.remove()
+        event.target.parentElement.remove();
+}}
+
+function updatePages(event){
+    let bookDiv = event.target.parentElement;
+    let newPages = bookDiv.querySelector(".update-pages").value;
+    let pagesSpan = bookDiv.querySelector(".pages span");
+
+    if (newPages && newPages >=0){
+        pagesSpan.textContent = newPages;
+
+        bookDiv.querySelector(".update-pages").value = "";
+        alert("Pages Updated Successfully!");
+    }
+    else{
+        alert("Please Enter a valid number of pages.")
     }
 }
-

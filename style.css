@@ -52,6 +52,7 @@ body {
     padding-right: 10px;
     margin-top: 10px;
     border: none;
+    
 }
 
 .book-container button:hover {
@@ -190,4 +191,13 @@ body {
         width: 100px;
         height: 120px;
     }
+}
+
+.update-pages{
+    border: solid #f52761;
+    background: transparent;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
 }
