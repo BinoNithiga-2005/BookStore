@@ -20,9 +20,13 @@
             <img src="book-image.jpg" alt="Book Cover">
             <h2>Ego Is the Enemy</h2>
             <h5>Ryan Holiday</h5>
-            <p>This book argues that too often our greatest obstacle is not outside circumstance but our own ego, and it shows how humanity, self-awareness and a grounded purpose can help overcome it.</p>
-            <h4>Number of pages read : 50</h4>
-            <a href="https://thereadershub.org/wp-content/uploads/2020/07/Ryan_Holiday_Ego_is_the_Enenmyz-lib.org_.pdf">Click to Read</a>
+            <p>This book argues that too often our greatest obstacle is not outside circumstance but our own ego, and it
+                shows how humanity, self-awareness and a grounded purpose can help overcome it.</p>
+            <a href="https://thereadershub.org/wp-content/uploads/2020/07/Ryan_Holiday_Ego_is_the_Enenmyz-lib.org_.pdf">Click
+                to Read</a>
+            <h4 class="pages">Pages Read:<span>0</span></h4>
+            <input type="number" class="update-pages" placeholder="Update Pages Here"> <button
+                onclick="updatePages(event)">Update</button>
             <button onclick="deletebook(event)">Delete</button>
         </div>
     </div>
@@ -36,7 +40,7 @@
             <input id="book-title-input" placeholder="Book Title">
             <input id="book-author-input" placeholder="Book Author">
             <input id="book-url-input" placeholder="Book Url to Read">
-             <input id="book-page-read" placeholder="Number of page Read:">
+            <input id="book-page-read" placeholder="Number of pages Read:">
             <textarea id="book-description-input" placeholder="Short Discription"></textarea>
             <button id="add-book">ADD</button>
             <button id="cancel-popup">CANCEL</button>

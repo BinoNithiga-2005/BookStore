@@ -5,12 +5,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: url(background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-
-
+    background: linear-gradient(to right, lightpink, lightblue);
 }
 
 .navbar {
@@ -52,7 +47,7 @@ body {
     padding-right: 10px;
     margin-top: 10px;
     border: none;
-    
+
 }
 
 .book-container button:hover {
@@ -61,12 +56,13 @@ body {
     border: #f52761 solid;
 }
 
-.book-container a{
+.book-container a {
     text-decoration: none;
-    color:#f52761;
+    color: #f52761;
     display: block;
 }
-.book-container a:hover{
+
+.book-container a:hover {
     transform: scale(1.02);
     color: goldenrod;
 }
@@ -84,7 +80,7 @@ body {
     right: 30px;
 }
 
-.add-button:hover{
+.add-button:hover {
     transform: scale(1.1);
 }
 
@@ -150,7 +146,8 @@ body {
     margin: 10px;
     border-radius: 5px;
 }
-.popup-box button:hover{
+
+.popup-box button:hover {
     transform: scale(1.05);
 }
 
@@ -177,10 +174,6 @@ body {
 
 @media screen and (max-width:670px) {
 
-    body {
-        background-color: lightcoral;
-    }
-
     .book-container {
         display: block;
         width: 80%;
@@ -193,11 +186,21 @@ body {
     }
 }
 
-.update-pages{
+.update-pages {
     border: solid #f52761;
     background: transparent;
     color: white;
     padding: 5px;
     border-radius: 5px;
     outline: none;
+}
+
+@media screen and (max-width:400px) {
+    .book-container {
+        margin-right: 30px;
+    }
+
+    .popup-box {
+        margin-right: 30px;
+    }
 }

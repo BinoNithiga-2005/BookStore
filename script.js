@@ -35,7 +35,7 @@ addBook.addEventListener("click", function (event) {
     popupOverlay.style.display = "none"
     let div = document.createElement("div");
     div.setAttribute("class", "book-container");
-    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5>  <a href="${bookUrl.value}">Click to Read</a> <p>${bookDescription.value}</p> <h4 class="pages">Pages Read:<span>${bookPages.value || 0}</span></h4> <input type="number" class = "update-pages" placeholder = "Updated Pages Here"> <button onclick = "updatePages(event)">Update</button> <button onclick="deletebook(event) ">Delete</button>`
+    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5>  <a href="${bookUrl.value}">Click to Read</a> <p>${bookDescription.value}</p> <h4 class="pages">Pages Read:<span>${bookPages.value || 0}</span></h4> <input type="number" class = "update-pages" placeholder = "Update Pages Here"> <button onclick = "updatePages(event)">Update</button> <button onclick="deletebook(event) ">Delete</button>`
     Container.appendChild(div);
 
     // clear input fileds
@@ -60,20 +60,21 @@ Container.addEventListener("click", function (event) {
 function deletebook(event) {
     if (confirm("Are you sure you want to delete this book?")) {
         event.target.parentElement.remove();
-}}
+    }
+}
 
-function updatePages(event){
+function updatePages(event) {
     let bookDiv = event.target.parentElement;
     let newPages = bookDiv.querySelector(".update-pages").value;
     let pagesSpan = bookDiv.querySelector(".pages span");
 
-    if (newPages && newPages >=0){
+    if (newPages && newPages >= 0) {
         pagesSpan.textContent = newPages;
 
         bookDiv.querySelector(".update-pages").value = "";
         alert("Pages Updated Successfully!");
     }
-    else{
+    else {
         alert("Please Enter a valid number of pages.")
     }
 }
